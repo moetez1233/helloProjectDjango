@@ -1,0 +1,13 @@
+<h1>Send an Email</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send Email</button>
+</form>
+
+<h2>Submitted Data</h2>
+<ul>
+    {% for item in mydata %}
+        <li>{{ item.name }} - {{ item.email }}: {{ item.message }}</li>
+    {% endfor %}
+</ul>
